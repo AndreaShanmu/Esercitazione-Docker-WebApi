@@ -22,8 +22,13 @@ export class AppComponent implements OnInit {
   // State
   logs: TransactionLog[] = [];
   feedbackMessage: string | null = null;
+// Variabili per il Login
+  isLoggedIn = false;
 
-  constructor(private fb: FormBuilder, private bankService: BankService) {
+  eseguiLogin() {
+    this.isLoggedIn = true;
+  }
+constructor(private fb: FormBuilder, private bankService: BankService) {
     this.userForm = this.fb.group({
       full_name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]]

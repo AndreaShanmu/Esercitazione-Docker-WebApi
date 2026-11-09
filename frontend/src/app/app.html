@@ -1,3 +1,13 @@
+<!-- Schermata di Login -->
+<div *ngIf="!isLoggedIn" style="text-align: center; margin-top: 100px; font-family: sans-serif;">
+  <h2>Benvenuto in SomeBankingApp</h2>
+  <input type="text" placeholder="Username" style="padding: 5px; margin: 5px;"><br>
+  <input type="password" placeholder="Password" style="padding: 5px; margin: 5px;"><br>
+  <button (click)="eseguiLogin()" style="padding: 8px 16px; margin-top: 10px; cursor: pointer;">Accedi</button>
+</div>
+
+<!-- Contenitore della Banca (nascosto se non sei loggato) -->
+<div *ngIf="isLoggedIn">
 <div class="container my-5">
   <h1 class="mb-4 text-center">FastAPI Banking Portal</h1>
 
@@ -120,4 +130,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
